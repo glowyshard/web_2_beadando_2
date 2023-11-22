@@ -1,0 +1,89 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('media/operasz.jpg');  /* Adjusted the path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Arial', sans-serif;
+}
+
+.content-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: auto; 
+    margin-top: 30px; 
+    border-radius: 40px;
+    flex: 1; 
+}       
+
+.margin-p
+{
+    margin-left: 300px;
+    margin-right:300px;
+}
+
+p {
+    margin: 8px 8px; 
+    text-align: justify;
+}
+
+p strong {
+    font-weight: bold; 
+    display: block; 
+    margin-bottom: 3px;
+    white-space: nowrap;
+}
+
+.op-container {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 30px;
+}
+
+.op-h2 {
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+
+.h-center{
+
+    text-align: center;
+    text-decoration: underline;
+}
+
+.nyit
+{
+    margin-left: 175px;
+    margin-right:100px ;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.nyit-caution
+{
+    margin-left: 86px;
+    margin-right:100px ;
+    color: red;
+}
+
+.center-form {
+    background-color: #e0e0ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; 
+    margin-left:400PX;
+    margin-right:400px;
+   border-radius: 90px;
+
+}
+
+li{
+    margin-top: 20px; 
+}
