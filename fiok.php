@@ -114,16 +114,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $loginSuccessful = $controller->loginUser($username, $password);
 
         if ($loginSuccessful) {
-            echo "<script>
-                    alert('Login successful!');
-                    window.location.href = '/web_2_beadando_2-main/index.php';
-                  </script>";
+            // Redirect to the home page upon successful login
+            header("Location: /web_2_beadando_2-main/index.php");
+            exit();
         } else {
             echo "<script>alert('Login failed!');</script>";
             echo "<script>
                     setTimeout(function(){
                         window.location.href = '/web_2_beadando_2-main/fiok.php';
-                    }, 2000); // 2000 milliseconds (2 seconds) delay
+                    }, 2000);
                   </script>";
         }
     } elseif (isset($_POST['logout'])) {
