@@ -5,6 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "cuk_db";
 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -77,7 +78,11 @@ $conn->close();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Task 3 - OperettaHarmony</title>
+=======
+    <title>Harmadik feladat - OperettaHarmony</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <!-- Include jQuery -->
@@ -86,7 +91,9 @@ $conn->close();
 <body>
     <?php require_once("header.php")?>
     <div class="container d-flex align-items-center flex-column content-container">
-        <h1>Data Retrieval for Task 3</h1>
+
+        <h1>Harmadik feladat lekérdező</h1>
+
         <label for="alkoto">Alkoto:</label>
         <select id="alkoto" name="alkoto">
             <?php foreach ($alkotoNevArray as $alkotoNev): ?>
