@@ -5,12 +5,20 @@ class UserModel {
     private $conn;
 
     public function __construct() {
-        $this->conn = new mysqli('localhost', 'root', '', 'users_db');
+        $host = 'localhost';
+    
+    $username = 'root';
+    $password = '';
+    $database = 'cuk_db';
 
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
-        }
+    // Create connection
+    $this->conn = new mysqli($host, $username, $password, $database);
+
+    // Check connection
+    if ($this->conn->connect_error) {
+        throw new Exception("Connection failed: " . $this->conn->connect_error);
     }
+}
 
     public function registerUser($username, $password, $keresztnev, $vezeteknev) {
         if ($this->isUsernameTaken($username)) {
@@ -114,16 +122,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $loginSuccessful = $controller->loginUser($username, $password);
 
         if ($loginSuccessful) {
-            echo "<script>
-                    alert('Login successful!');
-                    window.location.href = '/web_2_beadando_2-main/index.php';
-                  </script>";
+            // Redirect to the home page upon successful login
+            header("Location: /web_2_beadando_2-main/index.php");
+            exit();
         } else {
             echo "<script>alert('Login failed!');</script>";
             echo "<script>
                     setTimeout(function(){
                         window.location.href = '/web_2_beadando_2-main/fiok.php';
-                    }, 2000); // 2000 milliseconds (2 seconds) delay
+                    }, 2000);
                   </script>";
         }
     } elseif (isset($_POST['logout'])) {
